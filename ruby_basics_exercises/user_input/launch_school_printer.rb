@@ -1,22 +1,13 @@
-num = 0
 loop do
-  puts ">>How many lines of output do you want? (min. 3)"
-  num = gets.chomp.to_i
-  break if num >= 3
-  puts "That's not enough lines"
+  puts ">> How many lines of output do you want? Enter a number >= 3 (Q to quit):"
+  num = gets.chomp
+  break if num.downcase == 'q'
+  num = num.to_i
+  if num < 3
+    puts "That's not enough lines"
+    next
+  end
+  num.times {puts "Launch School is the best!"}
 end
 
-num.times {puts "Launch School is the best!"}
-
-# //Seemingly cannot declare a variable within the boolean expression of a conditional statement
-# until valid_response            
-#   puts ">>How many lines of output do you want? (min. 3)"
-#   num = gets.chomp.to_i
-#   if num < 3
-#     puts "That's not enough lines"
-#   else
-#     num.times {puts "Launch School is the best!"}
-#     valid_response = true
-#   end
-# end
 
