@@ -1,3 +1,5 @@
+require "pry"
+
 contact_data = [["joe@email.com", "123 Main st.", "555-123-4567"],
             ["sally@email.com", "404 Not Found Dr.", "123-234-3454"],
             ["abc@email.com", "14 Experimental Dr.", "REDACTED"],
@@ -20,6 +22,7 @@ for i in 0...contact_data.length do
     unc += 1
     names << "Unknown Contact ##{unc}"
     contacts[names[i]] = {}
+    binding.pry
   end
   contacts[names[i]] = {
                         email: contact_data[i][0],
