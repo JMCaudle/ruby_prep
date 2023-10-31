@@ -5,3 +5,4 @@ family = {  uncles: ["bob", "joe", "steve"],
           }
 
 p family.select {|k, v| k == :sisters || k == :brothers}.values.flatten
+p family[:sisters] + family[:brothers]
